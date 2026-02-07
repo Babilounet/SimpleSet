@@ -1,0 +1,8 @@
+## Interface: 20501
+## Title: SimpleSet
+## Version: 1.0
+## Notes: Save and load equipment sets with per-slot targeting.
+## SavedVariablesPerCharacter: SimpleSetDB
+## Author: Louch
+
+Main.lua
