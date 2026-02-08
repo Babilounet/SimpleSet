@@ -98,7 +98,7 @@ local PRESET_ICONS = {
 
 local settingsFrame, iconPicker, currentPickerIndex
 local editBoxes, iconBtns, specBtns = {}, {}, {}
-local minimapIcon
+local minimapIcon, refreshAllBagLocks
 
 ----------------------------------------------------------------------
 -- Database
@@ -151,6 +151,7 @@ local function saveSet(index)
         if tex then set.icon = tex end
     end
     print("|cff00ff00SimpleSet:|r \"" .. set.name .. "\" saved.")
+    refreshAllBagLocks()
 end
 
 local function loadSet(index)
@@ -262,6 +263,20 @@ local function updateContainerLocks(frame)
                 lockOverlays[key]:Hide()
             end
         end
+    end
+end
+
+refreshAllBagLocks = function()
+    -- Default bags
+    for bag = 1, 5 do
+        local frame = _G["ContainerFrame" .. bag]
+        if frame and frame:IsShown() then
+            updateContainerLocks(frame)
+        end
+    end
+    -- Baganator
+    if Baganator and Baganator.API and Baganator.API.RequestItemButtonsRefresh then
+        Baganator.API.RequestItemButtonsRefresh()
     end
 end
 
