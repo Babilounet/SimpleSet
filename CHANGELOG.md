@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.1
+
+- **Fix**: bag lock icons now refresh immediately after saving a set (default bags + Baganator)
+
 ## v1.3
 
 - **Icon picker**: choose an icon per set from 36 presets (gear, weapons, all class spec icons)
