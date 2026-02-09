@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.2
+
+- **Fix**: minimap icon now updates on login (`PLAYER_ENTERING_WORLD` + 1s delay)
+- **Fix**: minimap icon now updates when changing a single gear piece (debounced 0.5s timer)
+
 ## v1.3.1
 
 - **Fix**: bag lock icons now refresh immediately after saving a set (default bags + Baganator)
