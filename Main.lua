@@ -751,6 +751,7 @@ end
 ----------------------------------------------------------------------
 
 local f = CreateFrame("Frame")
+local minimapUpdatePending = false
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event, arg1)
     if event == "ADDON_LOADED" and arg1 == ADDON_NAME then
@@ -762,12 +763,21 @@ f:SetScript("OnEvent", function(self, event, arg1)
         hooksecurefunc("ContainerFrame_Update", updateContainerLocks)
         registerBaganatorWidget()
         self:UnregisterEvent("ADDON_LOADED")
+        self:RegisterEvent("PLAYER_ENTERING_WORLD")
         self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
         pcall(self.RegisterEvent, self, "ACTIVE_TALENT_GROUP_CHANGED")
-        updateMinimapIcon()
+
+    elseif event == "PLAYER_ENTERING_WORLD" then
+        C_Timer.After(1, updateMinimapIcon)
 
     elseif event == "PLAYER_EQUIPMENT_CHANGED" then
-        updateMinimapIcon()
+        if not minimapUpdatePending then
+            minimapUpdatePending = true
+            C_Timer.After(0.5, function()
+                minimapUpdatePending = false
+                updateMinimapIcon()
+            end)
+        end
 
     elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
         local activeSpec = GetActiveTalentGroup and GetActiveTalentGroup()
