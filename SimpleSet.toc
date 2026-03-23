@@ -4,5 +4,6 @@
 ## Notes: Save and load equipment sets with per-slot targeting.
 ## SavedVariablesPerCharacter: SimpleSetDB
 ## Author: Louch
+## X-Curse-Project-ID: 1456077
 
 Main.lua
