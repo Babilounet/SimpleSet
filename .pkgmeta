@@ -1,0 +1,5 @@
+package-as: SimpleSet
+
+ignore:
+  - README.md
+  - .github

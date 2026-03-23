@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: BigWigsMods/packager@v2
+        with:
+          args: -g classic
+        env:
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          CURSEFORGE_PROJECT_ID: 415d33a6-518c-474b-8b08-864a477021c6
