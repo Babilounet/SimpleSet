@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.3
+
+- **Fix**: Save dropdown repositioned to right side of character panel to avoid being hidden by WoW title dropdown
+- **UI**: Load and Save dropdowns slightly narrower for better layout
+- **CI**: Added CurseForge auto-release via GitHub Actions
+
 ## v1.3.2
 
 - **Fix**: minimap icon now updates on login (`PLAYER_ENTERING_WORLD` + 1s delay)
