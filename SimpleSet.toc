@@ -1,4 +1,4 @@
-## Interface: 20501
+## Interface: 20505
 ## Title: SimpleSet
 ## Version: 1.3.3
 ## Notes: Save and load equipment sets with per-slot targeting.
