@@ -13,7 +13,7 @@ jobs:
 
       - uses: BigWigsMods/packager@v2
         with:
-          args: -g classic
+          args: -g bcc
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           CURSEFORGE_PROJECT_ID: 415d33a6-518c-474b-8b08-864a477021c6
