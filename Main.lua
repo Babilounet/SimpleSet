@@ -555,7 +555,7 @@ end
 local function createUI()
     local loadDD = CreateFrame("Frame", "SimpleSet_LoadDD", PaperDollFrame, "UIDropDownMenuTemplate")
     loadDD:SetPoint("TOPLEFT", PaperDollFrame, "TOPLEFT", -5, -50)
-    UIDropDownMenu_SetWidth(loadDD, 65)
+    UIDropDownMenu_SetWidth(loadDD, 55)
     UIDropDownMenu_SetText(loadDD, "Load")
 
     UIDropDownMenu_Initialize(loadDD, function()
@@ -581,8 +581,8 @@ local function createUI()
     end)
 
     local saveDD = CreateFrame("Frame", "SimpleSet_SaveDD", PaperDollFrame, "UIDropDownMenuTemplate")
-    saveDD:SetPoint("LEFT", loadDD, "RIGHT", -30, 0)
-    UIDropDownMenu_SetWidth(saveDD, 65)
+    saveDD:SetPoint("TOPRIGHT", PaperDollFrame, "TOPRIGHT", -18, -50)
+    UIDropDownMenu_SetWidth(saveDD, 55)
     UIDropDownMenu_SetText(saveDD, "Save")
 
     UIDropDownMenu_Initialize(saveDD, function()
@@ -609,7 +609,7 @@ local function createUI()
 
     local gearBtn = CreateFrame("Button", nil, PaperDollFrame)
     gearBtn:SetSize(18, 18)
-    gearBtn:SetPoint("LEFT", saveDD, "RIGHT", -14, 2)
+    gearBtn:SetPoint("RIGHT", saveDD, "LEFT", 14, 2)
     gearBtn:SetNormalTexture("Interface\\Icons\\trade_engineering")
     gearBtn:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
     gearBtn:SetScript("OnClick", function() settingsFrame:Show() end)
