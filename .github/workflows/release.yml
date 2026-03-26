@@ -13,6 +13,6 @@ jobs:
 
       - uses: BigWigsMods/packager@v2
         with:
-          args: -g bcc -l "SimpleSet ${{ github.ref_name }}"
+          args: -g bcc -n ":SimpleSet {project-version}"
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
