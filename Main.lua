@@ -609,7 +609,7 @@ local function createUI()
 
     local gearBtn = CreateFrame("Button", nil, PaperDollFrame)
     gearBtn:SetSize(18, 18)
-    gearBtn:SetPoint("RIGHT", saveDD, "LEFT", 14, 2)
+    gearBtn:SetPoint("LEFT", loadDD, "RIGHT", -14, 2)
     gearBtn:SetNormalTexture("Interface\\Icons\\trade_engineering")
     gearBtn:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
     gearBtn:SetScript("OnClick", function() settingsFrame:Show() end)

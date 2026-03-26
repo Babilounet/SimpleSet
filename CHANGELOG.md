@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.4
+
+- **Fix**: Settings gear icon moved next to Load dropdown to avoid being hidden by WoW title list
+
 ## v1.3.3
 
 - **Fix**: Save dropdown repositioned to right side of character panel to avoid being hidden by WoW title dropdown
