@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.6
+
+- **Fix**: use `C_Container` API so bag lock overlay no longer errors on TBC 2.5.5
+
 ## v1.3.5
 
 - **Option**: toggle minimap button visibility from the settings panel

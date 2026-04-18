@@ -8,6 +8,10 @@ local MAX_SETS = 10
 
 SimpleSetDB = SimpleSetDB or {}
 
+-- API compatibility (TBC 2.5.5+ moved bag API to C_Container)
+local GetContainerNumSlots = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
+local GetContainerItemLink = (C_Container and C_Container.GetContainerItemLink) or GetContainerItemLink
+
 -- Equipment slots
 local SLOTS = {
     {name = "HeadSlot",          display = "Head"},
