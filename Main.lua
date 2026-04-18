@@ -98,7 +98,7 @@ local PRESET_ICONS = {
 
 local settingsFrame, iconPicker, currentPickerIndex
 local editBoxes, iconBtns, specBtns = {}, {}, {}
-local minimapIcon, refreshAllBagLocks
+local minimapIcon, minimapBtn, minimapCB, refreshAllBagLocks
 
 ----------------------------------------------------------------------
 -- Database
@@ -367,7 +367,10 @@ local function refreshSettingsUI()
             specBtns[i]:Hide()
         end
     end
-    settingsFrame:SetHeight(65 + count * 30)
+    if minimapCB then
+        minimapCB:SetChecked(not SimpleSetDB.hideMinimap)
+    end
+    settingsFrame:SetHeight(95 + count * 30)
 end
 
 ----------------------------------------------------------------------
@@ -545,6 +548,20 @@ local function createSettingsFrame()
         refreshSettingsUI()
     end)
 
+    minimapCB = CreateFrame("CheckButton", "SimpleSet_MinimapCB", settingsFrame, "UICheckButtonTemplate")
+    minimapCB:SetPoint("BOTTOMLEFT", 4, 30)
+    _G[minimapCB:GetName() .. "Text"]:SetText("Show minimap button")
+    minimapCB:SetScript("OnClick", function(self)
+        SimpleSetDB.hideMinimap = not self:GetChecked()
+        if minimapBtn then
+            if SimpleSetDB.hideMinimap then
+                minimapBtn:Hide()
+            else
+                minimapBtn:Show()
+            end
+        end
+    end)
+
     settingsFrame:SetScript("OnShow", refreshSettingsUI)
 end
 
@@ -627,6 +644,7 @@ end
 
 local function createMinimapButton()
     local btn = CreateFrame("Button", "SimpleSet_MinimapBtn", Minimap)
+    minimapBtn = btn
     btn:SetSize(31, 31)
     btn:SetFrameStrata("MEDIUM")
     btn:SetFrameLevel(8)
@@ -714,6 +732,10 @@ local function createMinimapButton()
         GameTooltip:Show()
     end)
     btn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
+    if SimpleSetDB.hideMinimap then
+        btn:Hide()
+    end
 end
 
 ----------------------------------------------------------------------

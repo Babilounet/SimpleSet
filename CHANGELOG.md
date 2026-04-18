@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.5
+
+- **Option**: toggle minimap button visibility from the settings panel
+
 ## v1.3.4
 
 - **Fix**: Settings gear icon moved next to Load dropdown to avoid being hidden by WoW title list
