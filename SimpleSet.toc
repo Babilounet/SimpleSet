@@ -1,7 +1,7 @@
 ## Interface: 20505
 ## Title: SimpleSet
 ## IconTexture: Interface\AddOns\SimpleSet\icon.blp
-## Version: 1.3.6
+## Version: 1.3.7
 ## Notes: Save and load equipment sets with per-slot targeting.
 ## SavedVariablesPerCharacter: SimpleSetDB
 ## Author: Louch
